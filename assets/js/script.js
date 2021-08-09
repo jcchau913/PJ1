@@ -10,7 +10,8 @@ function API_Album_Search(artist) {
       $.ajax({
           url: detailURL,
           method: "GET"
-        }).then(function(detail_response) {      
+        }).then(function(detail_response) {    
+          $("#album_list").empty();  
           for (x=0; x<detail_response.album.length; x++) {
             $("#album_list").append('<li><img src="' + detail_response.album[x].strAlbumThumb + '/preview"</img> ' + detail_response.album[x].strAlbum + ' (' + detail_response.album[x].intYearReleased + ')</li>');
           }  
