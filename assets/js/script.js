@@ -8,6 +8,8 @@ function API_Album_Search(artist) {
     method: "GET"
   }).then(function(response) { 
     var detailURL = "https://theaudiodb.com/api/v1/json/1/album.php?i=" + response.artists[0].idArtist;    
+    $("#bio-div").append('<p id="bio" class="flow-text"></p>');
+    $("#bio").html(response.artists[0].strBiographyEN);
     $("#parallax-banner").attr("src",response.artists[0].strArtistBanner);  
     $("#carousel-title").html("Albums"); 
     $.ajax({
