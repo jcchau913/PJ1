@@ -17,32 +17,101 @@
     <!--Materialize min-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
 
+    <link rel="stylesheet" href="assets\css\style.css">
+
     <title>Document</title>
 </head>
 
-<body>
-  <div class="container">
-    <!-- <div>
-        test
-    </div> -->
-    <div id="bio-div" class="row">
-     <!--    <div class="col s12 m6">
-          <div class="card blue-grey darken-1 id = albumCard">
-            <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div> -->
-    </div> 
+<body class="screenLimit">
+  <div class="navbar-fixed">
+    <nav class="#607d8b blue-grey hide">
+      <div class="nav-wrapper">
+          <a href="#row3" class="brand-logo"><img class="one" src="assets\Images\main_logo_clear.png" width="150" height="65" alt=""></a>
+          <a href="#" data-target= "mobile-demo" class=" sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
 
-    <div class="row">
-      <div class="col s12 m6">
+        <li>    
+          <div class="center row">
+             <div class="col s12 " >
+               <div class="row" id="navbarsearch">
+                 <div class="input-field col s6 s12 black-text">
+                  <i class="material-icons prefix">music_note</i>
+                   <input type="text" placeholder="Artist" id="icon_prefix2_navbar" class="autocomplete black-text" >
+                  </div>
+                 </div>
+               </div>
+             </div>          
+         </li>
+
+        <li><a href="#bio-title">Bio</a></li>
+        <li><a href="#carousel-title">Album</a></li>
+        <li><a href="#carousel-title2">Videos</a></li>
+      </div>
+    </nav>
+  </div>
+  <ul class= "sidenav hide" id="mobile-demo">
+        <li>    
+          <div class="center row">
+             <div class="col s12 " >
+               <div class="row" id="sidenavsearch">
+                 <div class="input-field col s6 s12 black-text">
+                  <i class="material-icons prefix">music_note</i>
+                   <input type="text" placeholder="Artist" id="icon_prefix2_sidenav" class="autocomplete black-text" >
+                  </div>
+                 </div>
+               </div>
+             </div>          
+         </li>    
+        <li><a href="#bio-title">Bio</a></li>
+        <li><a href="#carousel-title">Albums</a></li>
+        <li><a href="#carousel-title2">Videos</a></li>
+  </ul>
+
+  <div class="container" id="mainContainer">
+
+  
+    <div class="row" id="row1">
+      <!-- Makes columns responsive. Pushes 2 columns right when small screen pushes 3 right when medium screen  -->
+        <div class="col s8 m6 push-s2 push-m3 mt-2" id= "col1">
+            <img src="assets\Images\main_logo_clear.png" id ="mainLogo" alt="Main Logo">
+        </div>
+    </div>
+
+    <div class="row" id="row2">
+      <div class="col s12 m6 push-m3" id="col2">
+            <div id="mainPage">
+                <div class="input-field" id="artistInput">
+                    <i class="material-icons prefix">music_note</i>
+                    <input id="icon_prefix2" name= "textInput" type="text" class="validate">
+                    <label for="icon_prefix2">Artist</label>
+                </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="row hide" id="row3">
+      <div class="col-12" id="banner">
+    
+      </div>
+    </div>
+
+    <div class="row hide" id="row4">
+      <h4 class="center-align" id="bio-title"></h4>
+      <div class="col s10 m6 push-s1 push-m3" id="bioColumn">
+        <ul class="collapsible" id="bioCollapse">
+          <li>
+            <div class="collapsible-header"><i class="material-icons">info</i>Artist Bio</div>
+            <div class="collapsible-body"><span id="bioText" class="flow-text"></span></div>
+          </li>
+          <li>
+        <div id="bio-div"></div>
+      </div>
+    </div>
+
+
+    <div class="row hide" id="row5">
+      <h4 class="center-align" id="carousel-title"></h4>
+      <div class="col s12 m6 push-m3">
         <div class="carousel" id="albumCarousel">
             <!-- <a class="carousel-item" id = "album1" href="#one!"><img src="sample.jpg"></a>
             <a class="carousel-item" id = "album2" href="#two!"><img src="sample.jpg"></a>
@@ -52,7 +121,36 @@
         </div>
       </div>
     </div>
+
+    <div class ="row hide" id="row6">
+      <h4 class="center-align" id="albumName"></h4>
+      <div class="col s12 m8 push-m2" id="tracksColumn">
+        <table class="striped centered">
+          <thead>
+            <tr>
+              <th>Track Number</th>
+              <th>Track Name</th>
+              <th>Track Length</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+           
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row hide" id="row7">
+      <h4 class="center-align" id="carousel-title2"></h4>
+      <div class="col s12 m6 push-m3">
+        <div class="carousel" id="videoCarousel">
+            
+        </div>
+      </div>
+    </div>
+
   </div>
+
 
 
 <script src="./assets/js/script.js"></script> 
