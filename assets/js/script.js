@@ -17,7 +17,9 @@ function API_Album_Search(artist) {
         url: detailURL,
         method: "GET"
       //takes the api data and applies it to the album carousel 
-      }).then(function(detail_response) {   
+      }).then(function(detail_response) { 
+        // clears the any previous track listing table when searching a new artist.
+        $("#tableBody").empty();  
         $("#albumCarousel").empty();   
         for (x=0; x<detail_response.album.length; x++) {
           if (detail_response.album[x].strAlbumThumb){
